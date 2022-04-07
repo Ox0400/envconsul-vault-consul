@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  envconsul:
+    image: hashicorp/envconsul:0.12.1
+    entrypoint: sh
+    tty: true
+    stdin_open: true
+  vault:
+    image: vault:1.10.0
+    ports:
+      - '8200:8200'
+  consul:
+    image: consul:1.8
+    ports:
+      - '8500:8500'
+
